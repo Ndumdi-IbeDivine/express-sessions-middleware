@@ -10,14 +10,14 @@ const app = express();
 
 //Middleware
 
-//creating 24 hours in milliseconds
-const oneDay = 1000 * 60 * 60 * 24;
+//creating 48hours hours in milliseconds
+const twoDays = 1000 * 60 * 60 * 48;
 
 //Session middleware
 app.use(sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
     saveUninitialized:true,
-    cookie: { maxAge: oneDay },
+    cookie: { maxAge: twoDays },
     resave: false
 }));
 
@@ -29,7 +29,7 @@ app.use(express.static(__dirname));
 //cookie-parser middleware
 app.use(cookieParser());
 
-const username = "user1";
+const username = "user2";
 const password = "myPassword";
 
 // var session;
